@@ -5,14 +5,21 @@
 function tela_inicial() {
   OPCAO_TELA_INICIAL="" # Variável para tela inicial.
 
-  while [[ OPCAO_TELA_INICIAL -ne 2 ]]; do # While da tela inicial.
+  while true; do # While da tela inicial.
+    clear
     echo -e "SPACE RPG\n       TEXT"
     echo -e "1 - Iniciar\n2 - Sair"
-    read -i "texto" OPCAO_TELA_INICIAL
+    read OPCAO_TELA_INICIAL
     # If para verifiicar conteudo da variável OPCAO_TELA_INICIAL.
-    if [ OPCAO_TELA_INICIAL != 1 -o OPCAO_TELA_INICIAL != 2 ]; then
-      OPCAO_TELA_INICIAL = ""
-      echo "erro"
+    if [[ OPCAO_TELA_INICIAL -eq 2 ]]; then
+      break
+    elif [[ OPCAO_TELA_INICIAL -eq 1 ]]; then
+      echo "Tela dos personagens."
+      sleep 2
+      break
+    else
+      clear
+      echo "Opção invalida!"
       sleep 2
     fi
   done
