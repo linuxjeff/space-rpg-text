@@ -25,4 +25,11 @@ function tela_inicial() {
   done
 }
 
-tela_inicial
+function tela_personagens() {
+  PERSONAGEM_ESCOLHIDO=""
+  while true; do
+    #statements
+  done
+}
+
+tela_personagens
