@@ -28,7 +28,11 @@ function tela_inicial() {
 function tela_personagens() {
   PERSONAGEM_ESCOLHIDO=""
   while true; do
-    #statements
+    echo -e "Classe: Engeiero Classe: Fuzileiro Classe: "
+    read PERSONAGEM_ESCOLHIDO
+    if [[ PERSONAGEM_ESCOLHIDO -eq 1 ]]; then
+      break
+    fi
   done
 }
 
