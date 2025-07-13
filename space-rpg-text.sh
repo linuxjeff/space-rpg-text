@@ -12,7 +12,7 @@ function tela_inicial() {
     clear
     echo -e "SPACE RPG\n       TEXT"
     echo -e "1 - Iniciar\n2 - Sair"
-    read OPCAO_TELA_INICIAL
+    echo -n ">>> " ; read OPCAO_TELA_INICIAL
     # If para verifiicar conteudo da variável OPCAO_TELA_INICIAL.
     if [[ OPCAO_TELA_INICIAL -eq 2 ]]; then
       break
