@@ -17,9 +17,7 @@ function tela_inicial() {
     if [[ OPCAO_TELA_INICIAL -eq 2 ]]; then
       break
     elif [[ OPCAO_TELA_INICIAL -eq 1 ]]; then
-      echo "Tela dos personagens."
-      sleep 2
-      break
+      tela_personagens
     else
       clear
       echo "Opção invalida!"
@@ -55,5 +53,3 @@ function tela_personagens() {
     fi
   done
 }
-
-tela_personagens
