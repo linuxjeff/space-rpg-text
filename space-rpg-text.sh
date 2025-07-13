@@ -40,8 +40,9 @@ function tela_personagens() {
     if [[ PERSONAGEM_ESCOLHIDO -eq "" ]]; then
       PERSONAGEM_ESCOLHIDO="0"
     fi
-    if [[ $PERSONAGEM_ESCOLHIDO -eq 1 || $PERSONAGEM_ESCOLHIDO -eq 2 ]]; then
+    if [[ $PERSONAGEM_ESCOLHIDO -eq 1 || $PERSONAGEM_ESCOLHIDO -eq 2 || $PERSONAGEM_ESCOLHIDO -eq 3 ]]; then
       echo "Tela nome do personagem."
+      CLASSE_DO_PERSONAGEM="$PERSONAGEM_ESCOLHIDO"
       exit 0
     elif [[ PERSONAGEM_ESCOLHIDO -eq "0" ]]; then
       tela_inicial
@@ -53,3 +54,5 @@ function tela_personagens() {
     fi
   done
 }
+
+tela_inicial
