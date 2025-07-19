@@ -5,6 +5,7 @@
 NOME_DO_PERSONAGEM=""
 CLASSE_DO_PERSONAGEM=""
 
+
 function tela_inicial() {
   OPCAO_TELA_INICIAL="" # Variável para tela inicial.
 
@@ -25,6 +26,7 @@ function tela_inicial() {
     fi
   done
 }
+
 
 function tela_personagens() {
   PERSONAGEM_ESCOLHIDO=""
@@ -54,8 +56,26 @@ function tela_personagens() {
   done
 }
 
+
 function tela_nome() {
-  #statements
+  NOME_ESCOLHIDO=""
+  ESCOLHA=""
+  clear
+  echo -n "Digite o nome do seu personagem: " ; read NOME_ESCOLHIDO
+  clear
+  echo "O nome escolhido foi: $NOME_ESCOLHIDO"
+  #echo -e "Manter - 1\nTrocar - 2"
+  #echo -n ">>> " ; read ESCOLHA
+  #if [[ $ESCOLHA -eq 1 ]]; then
+  #  NOME_DO_PERSONAGEM=$NOME_ESCOLHIDO
+  #elif [[ $ESCOLHA -eq 2 ]]; then
+  #  tela_nome
+  #else
+  #  clear
+  #  echo "Opção invalida!"
+  #  sleep 2
+  #  tela_nome
+  #fi
 }
 
 tela_inicial
