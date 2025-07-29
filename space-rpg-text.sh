@@ -3,7 +3,7 @@
 # Este é um jogo de RPG em texto.
 
 NOME_DO_PERSONAGEM="" # Guarda o nome do personagem no nivel Global
-CLASSE_DO_PERSONAGEM=""
+CLASSE_DO_PERSONAGEM=""   # Guarda a classe do personagem em nivel global.
 NUMERO_TOTAL_DE_XP=""
 SOMA_DE_QUILOMETROS=""
 NUMERO_DO_EVENTO=""
