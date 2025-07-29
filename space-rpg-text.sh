@@ -99,7 +99,7 @@ function tela_nome() { # Tela nomearmazena o nome escolhido em uma variável.
 }
 
 
-function tela_da_sinopse() {
+function tela_da_sinopse() { # Tela da sinopse
 
   clear
 
