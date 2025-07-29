@@ -8,7 +8,7 @@ NUMERO_TOTAL_DE_XP=""     # Guarda o total de experiencia do personagem.
 SOMA_DE_QUILOMETROS=""    # Guarda os quilômetros percorridos.
 NUMERO_DO_EVENTO=""       # Guarda o número do evento.
 
-function opcao_invalida() {
+function opcao_invalida() { # Frase de opção invalida.
   clear
   echo "Opção invalida."
   sleep 3
