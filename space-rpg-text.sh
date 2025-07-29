@@ -196,18 +196,20 @@ function progresso_no_jogo() {
 
   case $NUMERO_PROGRESSO in
     1 )
-    SOMA_DE_QUILOMETROS=$(( SOMA_DE_QUILOMETROS++ ))
+    let SOMA_DE_QUILOMETROS=SOMA_DE_QUILOMETROS+1
     clear
     echo "$FRASE_NADA"
     sleep 3
     tela_do_jogador
       ;;
     2 )
+    let SOMA_DE_QUILOMETROS=SOMA_DE_QUILOMETROS+1
     clear
     echo "$NUMERO_PROGRESSO"
     sleep 3
       ;;
     3 )
+    let SOMA_DE_QUILOMETROS=SOMA_DE_QUILOMETROS+1
     clear
     echo "$NUMERO_PROGRESSO"
     sleep 3
