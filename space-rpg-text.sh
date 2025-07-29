@@ -25,7 +25,7 @@ function tela_inicial() { # Função da tela inicial.
 
   OPCAO_TELA_INICIAL="${OPCAO_TELA_INICIAL^^}"
 
-  case $OPCAO_TELA_INICIAL in
+  case $OPCAO_TELA_INICIAL in # Case que verifica a opção escolhida.
     1 | "I" | "INICIAR" )
     tela_personagens
       ;;
