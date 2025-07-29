@@ -41,7 +41,8 @@ function tela_inicial() { # Função da tela inicial.
 }
 
 
-function tela_personagens() {
+function tela_personagens() { # Tela do personagem, o personagem é armazenado
+                              # em uma variável.
   clear
 
   echo "| ID: 1            | ID: 2             | ID: 3             |"
