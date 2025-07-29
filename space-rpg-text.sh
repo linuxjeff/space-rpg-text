@@ -43,6 +43,26 @@ function tela_inicial() { # Função da tela inicial.
   esac
 }
 
+function habilidade_do_personagem() {
+  case $CLASSE_DO_PERSONAGEM in
+  1 )
+  ATAQUE_PERSONAGEM="8"
+  DEFESA_PERSONAGEM="10"
+  VELOCIDADE_PERSONAGEM="6"
+  ;;
+  2 )
+  ATAQUE_PERSONAGEM="10"
+  DEFESA_PERSONAGEM="6"
+  VELOCIDADE_PERSONAGEM="8"
+  ;;
+  3 )
+  ATAQUE_PERSONAGEM="6"
+  DEFESA_PERSONAGEM="8"
+  VELOCIDADE_PERSONAGEM="10"
+  ;;
+  esac
+  #statements
+}
 
 function tela_personagens() { # Tela do personagem, o personagem é armazenado
                               # em uma variável.
@@ -62,6 +82,7 @@ function tela_personagens() { # Tela do personagem, o personagem é armazenado
   case $PERSONAGEM_ESCOLHIDO in # Case que verifica a opção escolhida.
     1 | 2 | 3)
     CLASSE_DO_PERSONAGEM=$PERSONAGEM_ESCOLHIDO
+    habilidade_do_personagem
     tela_nome
       ;;
   "S" )
@@ -225,5 +246,6 @@ function progresso_no_jogo() { # Esta função faz o sorteio do que vai acontece
   esac
   tela_do_jogador
 }
+
 
 tela_inicial
