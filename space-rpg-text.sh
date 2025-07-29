@@ -180,7 +180,7 @@ function sair_tela_jogador() { # Tela para sair do jogo, depois do jogo
 
   read -p ">>> " OPCAO_JOGADOR
 
-  case $OPCAO_JOGADOR in
+  case $OPCAO_JOGADOR in # Case para verificar a opção escolhida.
     1 )
     exit 0
       ;;
@@ -194,7 +194,8 @@ function sair_tela_jogador() { # Tela para sair do jogo, depois do jogo
   esac
 }
 
-function progresso_no_jogo() {
+function progresso_no_jogo() { # Esta função faz o sorteio do que vai acontecer 
+                               # no evento do quilômetro.
   FRASE_NADA="Você andou mais um quilômetro sem problemas."
   NUMERO_PROGRESSO=$((RANDOM % 3 + 1))
 
