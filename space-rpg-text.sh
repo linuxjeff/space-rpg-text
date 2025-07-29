@@ -87,7 +87,7 @@ function tela_nome() { # Tela nomearmazena o nome escolhido em uma variável.
                                         # é dado o nome padrão de Jogador.
   fi
 
-  NOME_DO_PERSONAGEM=$NOME_ESCOLHIDO
+  NOME_DO_PERSONAGEM=$NOME_ESCOLHIDO # Colocando o nome na variável global.
 
   clear
 
