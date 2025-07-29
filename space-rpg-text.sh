@@ -194,12 +194,12 @@ function sair_tela_jogador() { # Tela para sair do jogo, depois do jogo
   esac
 }
 
-function progresso_no_jogo() { # Esta função faz o sorteio do que vai acontecer 
+function progresso_no_jogo() { # Esta função faz o sorteio do que vai acontecer
                                # no evento do quilômetro.
   FRASE_NADA="Você andou mais um quilômetro sem problemas."
   NUMERO_PROGRESSO=$((RANDOM % 3 + 1))
 
-  case $NUMERO_PROGRESSO in
+  case $NUMERO_PROGRESSO in # Case para verificar a opção escolhida.
     1 )
     let SOMA_DE_QUILOMETROS=SOMA_DE_QUILOMETROS+1
     clear
