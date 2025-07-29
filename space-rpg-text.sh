@@ -122,7 +122,7 @@ read -p "Pressione enter para continuar..."
 tela_da_mecanica
 }
 
-function tela_da_mecanica() {
+function tela_da_mecanica() { # Tela que explica como o jogo funciona.
 
   clear
 
