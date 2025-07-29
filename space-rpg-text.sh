@@ -70,9 +70,10 @@ function tela_nome() {
   NOME_ESCOLHIDO=""
   ESCOLHA=""
   clear
-  echo -n "Digite o nome do seu personagem: " ; read NOME_ESCOLHIDO
+  read -p "Digite o nome do seu personagem: " NOME_ESCOLHIDO
   clear
   echo "O nome escolhido foi: $NOME_ESCOLHIDO"
+  sleep 5
 
   tela_da_sinopse
 }
