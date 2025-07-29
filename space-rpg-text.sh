@@ -4,7 +4,15 @@
 
 NOME_DO_PERSONAGEM=""
 CLASSE_DO_PERSONAGEM=""
+NUMERO_TOTAL_DE_XP=""
+SOMA_DE_QUILOMETROS=""
+NUMERO_DO_EVENTO=""
 
+function opcao_invalida() {
+  clear
+  echo "Opção invalida."
+  sleep 3
+}
 
 function tela_inicial() {
   OPCAO_TELA_INICIAL="" # Variável para tela inicial.
@@ -25,9 +33,7 @@ function tela_inicial() {
     exit 0
       ;;
     * )
-    clear
-    echo "Opção invalida!"
-    sleep 2
+    opcao_invalida
     tela_inicial
       ;;
   esac
@@ -68,11 +74,21 @@ esac
 
 function tela_nome() {
   NOME_ESCOLHIDO=""
-  ESCOLHA=""
+
   clear
+
   read -p "Digite o nome do seu personagem: " NOME_ESCOLHIDO
+
+  if [[ $NOME_ESCOLHIDO -eq "" ]]; then
+    NOME_ESCOLHIDO="Jogador"
+  fi
+
+  NOME_DO_PERSONAGEM=$NOME_ESCOLHIDO
+
   clear
+
   echo "O nome escolhido foi: $NOME_ESCOLHIDO"
+
   sleep 5
 
   tela_da_sinopse
@@ -92,7 +108,7 @@ function tela_da_sinopse() {
    Você pega seus kits médicos e sua arma e começa a caminhar.
 
 \tSistema Estelar: Vanini
-\t\tMundo: Aurora
+\t\tPlaneta: Aurora
 \t\t\tAtmosfera: Respirável
 \t\t\tTipos de Biomas: Aridos
 "
@@ -123,7 +139,81 @@ function tela_da_mecanica() {
 }
 
 function tela_do_jogador () {
-  echo
+
+  ESCOLHA_JOGADOR=""
+
+  clear
+
+  echo -e "1 - Andar mais um quilômetro   2 - Entrar no menu   3 - Sair\n\n"
+  echo -e "Quilômetros percoridos: $SOMA_DE_QUILOMETROS"
+
+  read -p "Escolha a opção: " ESCOLHA_JOGADOR
+
+  case $ESCOLHA_JOGADOR in
+    1 )
+    progresso_no_jogo
+      ;;
+    2 )
+
+      ;;
+    3 )
+    sair_tela_jogador
+      ;;
+    * )
+    opcao_invalida
+    tela_do_jogador
+      ;;
+  esac
+}
+
+
+function sair_tela_jogador() {
+  OPCAO_JOGADOR=""
+
+  clear
+
+  echo -e "Saindo do jogo todo o progresso será perdido\n1 - Sair | 2 - Voltar"
+
+  read -p ">>> " OPCAO_JOGADOR
+
+  case $OPCAO_JOGADOR in
+    1 )
+    exit 0
+      ;;
+    2 )
+    tela_do_jogador
+      ;;
+    * )
+    opcao_invalida
+    sair_tela_jogador
+      ;;
+  esac
+}
+
+function progresso_no_jogo() {
+  FRASE_NADA="Você andou mais um quilômetro sem problemas."
+  NUMERO_PROGRESSO=$((RANDOM % 3 + 1))
+
+  case $NUMERO_PROGRESSO in
+    1 )
+    SOMA_DE_QUILOMETROS=$(( SOMA_DE_QUILOMETROS++ ))
+    clear
+    echo "$FRASE_NADA"
+    sleep 3
+    tela_do_jogador
+      ;;
+    2 )
+    clear
+    echo "$NUMERO_PROGRESSO"
+    sleep 3
+      ;;
+    3 )
+    clear
+    echo "$NUMERO_PROGRESSO"
+    sleep 3
+      ;;
+  esac
+  tela_do_jogador
 }
 
 tela_inicial
