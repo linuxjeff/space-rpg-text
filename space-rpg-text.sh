@@ -53,7 +53,8 @@ function tela_personagens() { # Tela do personagem, o personagem é armazenado
   echo "Digite o ID do personagens ou (S)air para voltar a tela inicail."
   echo -n ">>> " ; read PERSONAGEM_ESCOLHIDO
 
-  PERSONAGEM_ESCOLHIDO="${PERSONAGEM_ESCOLHIDO^^}"
+  PERSONAGEM_ESCOLHIDO="${PERSONAGEM_ESCOLHIDO^^}" # Troca letras minusculas por
+                                                   # letras maiúsculas.
 
   case $PERSONAGEM_ESCOLHIDO in
     1 | 2 | 3)
