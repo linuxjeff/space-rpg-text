@@ -4,7 +4,7 @@
 
 NOME_DO_PERSONAGEM="" # Guarda o nome do personagem no nivel Global
 CLASSE_DO_PERSONAGEM=""   # Guarda a classe do personagem em nivel global.
-NUMERO_TOTAL_DE_XP=""
+NUMERO_TOTAL_DE_XP=""     # Guarda o total de experiencia do personagem.
 SOMA_DE_QUILOMETROS=""
 NUMERO_DO_EVENTO=""
 
