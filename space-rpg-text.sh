@@ -75,8 +75,8 @@ esac
 }
 
 
-function tela_nome() {
-  NOME_ESCOLHIDO=""
+function tela_nome() { # Tela nomearmazena o nome escolhido em uma variável.
+  NOME_ESCOLHIDO="" # Variável local que guarda o nome escolhido.
 
   clear
 
