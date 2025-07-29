@@ -82,7 +82,7 @@ function tela_nome() { # Tela nomearmazena o nome escolhido em uma variável.
 
   read -p "Digite o nome do seu personagem: " NOME_ESCOLHIDO
 
-  if [[ $NOME_ESCOLHIDO -eq "" ]]; then # If para verificar se a variável do
+  if [ -z $NOME_ESCOLHIDO ]; then # If para verificar se a variável do
     NOME_ESCOLHIDO="Jogador"            # nome esta vazia. Caso esteja vazia
                                         # é dado o nome padrão de Jogador.
   fi
