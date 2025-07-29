@@ -56,7 +56,7 @@ function tela_personagens() { # Tela do personagem, o personagem é armazenado
   PERSONAGEM_ESCOLHIDO="${PERSONAGEM_ESCOLHIDO^^}" # Troca letras minusculas por
                                                    # letras maiúsculas.
 
-  case $PERSONAGEM_ESCOLHIDO in
+  case $PERSONAGEM_ESCOLHIDO in # Case que verifica a opção escolhida.
     1 | 2 | 3)
     CLASSE_DO_PERSONAGEM=$PERSONAGEM_ESCOLHIDO
     tela_nome
