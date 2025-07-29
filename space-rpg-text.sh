@@ -153,7 +153,7 @@ function tela_do_jogador () { # Tela onde o jogo se desenrola até o fim.
 
   read -p "Escolha a opção: " ESCOLHA_JOGADOR
 
-  case $ESCOLHA_JOGADOR in
+  case $ESCOLHA_JOGADOR in # Case para verificar a opção escolhida.
     1 )
     progresso_no_jogo
       ;;
