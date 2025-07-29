@@ -142,7 +142,7 @@ function tela_da_mecanica() { # Tela que explica como o jogo funciona.
 
 }
 
-function tela_do_jogador () {
+function tela_do_jogador () { # Tela onde o jogo se desenrola até o fim.
 
   ESCOLHA_JOGADOR=""
 
