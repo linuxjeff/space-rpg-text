@@ -23,7 +23,8 @@ function tela_inicial() { # Função da tela inicial.
   echo -e "1 - Iniciar\n2 - Sair"
   echo -n ">>> " ; read OPCAO_TELA_INICIAL
 
-  OPCAO_TELA_INICIAL="${OPCAO_TELA_INICIAL^^}"
+  OPCAO_TELA_INICIAL="${OPCAO_TELA_INICIAL^^}" # Troca letras minusculas por
+                                               # letras maiúsculas.
 
   case $OPCAO_TELA_INICIAL in # Case que verifica a opção escolhida.
     1 | "I" | "INICIAR" )
