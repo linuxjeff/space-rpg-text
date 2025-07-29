@@ -14,7 +14,7 @@ function opcao_invalida() { # Frase de opção invalida.
   sleep 3
 }
 
-function tela_inicial() {
+function tela_inicial() { # Função da tela inicial.
   OPCAO_TELA_INICIAL="" # Variável para tela inicial.
 
   clear
