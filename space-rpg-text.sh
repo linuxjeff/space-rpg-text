@@ -2,7 +2,7 @@
 # v0.0.1
 # Este é um jogo de RPG em texto.
 
-NOME_DO_PERSONAGEM=""
+NOME_DO_PERSONAGEM="" # Guarda o nome do personagem no nivel Global
 CLASSE_DO_PERSONAGEM=""
 NUMERO_TOTAL_DE_XP=""
 SOMA_DE_QUILOMETROS=""
