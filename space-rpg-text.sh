@@ -2,11 +2,14 @@
 # v0.0.1
 # Este é um jogo de RPG em texto.
 
-NOME_DO_PERSONAGEM="" # Guarda o nome do personagem no nivel Global
+NOME_DO_PERSONAGEM=""     # Guarda o nome do personagem no nivel Global
 CLASSE_DO_PERSONAGEM=""   # Guarda a classe do personagem em nivel global.
 NUMERO_TOTAL_DE_XP=""     # Guarda o total de experiencia do personagem.
 SOMA_DE_QUILOMETROS=""    # Guarda os quilômetros percorridos.
 NUMERO_DO_EVENTO=""       # Guarda o número do evento.
+ATAQUE_PERSONAGEM=""      # Guarda o ataque do personagem.
+DEFESA_PERSONAGEM=""      # Guarda a defesa do personagem.
+VELOCIDADE_PERSONAGEM=""  # Guarda a velocidade do personagem.
 
 function opcao_invalida() { # Frase de opção invalida.
   clear
