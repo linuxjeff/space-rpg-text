@@ -171,8 +171,8 @@ function tela_do_jogador () { # Tela onde o jogo se desenrola até o fim.
 }
 
 
-function sair_tela_jogador() {
-  OPCAO_JOGADOR=""
+function sair_tela_jogador() { # Tela para sair do jogo, depois do jogo
+  OPCAO_JOGADOR=""             # iniciado.
 
   clear
 
