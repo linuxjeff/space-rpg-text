@@ -7,6 +7,7 @@ CLASSE_DO_PERSONAGEM=""   # Guarda a classe do personagem em nivel global.
 NUMERO_TOTAL_DE_XP=""     # Guarda o total de experiencia do personagem.
 SOMA_DE_QUILOMETROS=""    # Guarda os quilômetros percorridos.
 NUMERO_DO_EVENTO=""       # Guarda o número do evento.
+VIDA_PERSONAGEM=""        # Guarda a vida do personagem.
 ATAQUE_PERSONAGEM=""      # Guarda o ataque do personagem.
 DEFESA_PERSONAGEM=""      # Guarda a defesa do personagem.
 VELOCIDADE_PERSONAGEM=""  # Guarda a velocidade do personagem.
@@ -46,16 +47,19 @@ function tela_inicial() { # Função da tela inicial.
 function habilidade_do_personagem() {
   case $CLASSE_DO_PERSONAGEM in
   1 )
+  VIDA_PERSONAGEM="40"
   ATAQUE_PERSONAGEM="8"
   DEFESA_PERSONAGEM="10"
   VELOCIDADE_PERSONAGEM="6"
   ;;
   2 )
+  VIDA_PERSONAGEM="45"
   ATAQUE_PERSONAGEM="10"
   DEFESA_PERSONAGEM="6"
   VELOCIDADE_PERSONAGEM="8"
   ;;
   3 )
+  VIDA_PERSONAGEM="50"
   ATAQUE_PERSONAGEM="6"
   DEFESA_PERSONAGEM="8"
   VELOCIDADE_PERSONAGEM="10"
