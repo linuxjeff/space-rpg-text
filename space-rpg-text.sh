@@ -65,8 +65,8 @@ function habilidade_do_personagem() {
   VELOCIDADE_PERSONAGEM="10"
   ;;
   esac
-  #statements
 }
+
 
 function tela_personagens() { # Tela do personagem, o personagem é armazenado
                               # em uma variável.
@@ -253,8 +253,13 @@ function progresso_no_jogo() { # Esta função faz o sorteio do que vai acontece
 }
 
 
-function batalha() {
+function sorteio_de_alien() {
   #statements
+}
+
+
+function batalha() {
+  sorteio_de_alien
 }
 
 tela_inicial
