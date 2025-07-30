@@ -254,7 +254,7 @@ function progresso_no_jogo() { # Esta função faz o sorteio do que vai acontece
 
 
 function sorteio_de_alien() {
-  #statements
+  AL_CANOVA
 }
 
 
