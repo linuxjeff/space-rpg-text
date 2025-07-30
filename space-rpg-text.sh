@@ -8,7 +8,7 @@ source monstros.lib
 NOME_DO_PERSONAGEM=""     # Guarda o nome do personagem no nivel Global
 CLASSE_DO_PERSONAGEM=""   # Guarda a classe do personagem em nivel global.
 NUMERO_TOTAL_DE_XP=""     # Guarda o total de experiencia do personagem.
-SOMA_DE_QUILOMETROS=""    # Guarda os quilômetros percorridos.
+SOMA_DE_QUILOMETROS="0"   # Guarda os quilômetros percorridos.
 NUMERO_DO_EVENTO=""       # Guarda o número do evento.
 OPCAO_BATALHA=""
 VIDA_NA_BATALHA=""
