@@ -70,6 +70,7 @@ function tela_personagens() { # Tela do personagem, o personagem é armazenado
 
   echo "| ID: 1            | ID: 2             | ID: 3             |"
   echo "| Classe: Engeiero | Classe: Fuzileiro | Classe: Cientista |"
+  echo "| Vida: 40         | Vida: 45          | Vida: 50          |"
   echo "| Ataque: 8        | Ataque: 10        | Ataque: 6         |"
   echo "| Defesa: 10       | Defesa: 6         | Defesa: 8         |"
   echo "| Velocidade: 6    | Velocidade: 8     | Velocidade: 10    |"
@@ -182,7 +183,7 @@ function tela_do_jogador () { # Tela onde o jogo se desenrola até o fim.
     progresso_no_jogo
       ;;
     2 )
-
+    batalha
       ;;
     3 )
     sair_tela_jogador
@@ -247,5 +248,9 @@ function progresso_no_jogo() { # Esta função faz o sorteio do que vai acontece
   tela_do_jogador
 }
 
+
+function batalha() {
+  #statements
+}
 
 tela_inicial
