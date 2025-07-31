@@ -56,22 +56,13 @@ function tela_inicial() { # Função da tela inicial.
 function habilidade_do_personagem() {
   case $CLASSE_DO_PERSONAGEM in
   1 )
-  VIDA_PERSONAGEM="40"
-  ATAQUE_PERSONAGEM="8"
-  DEFESA_PERSONAGEM="10"
-  VELOCIDADE_PERSONAGEM="6"
+  engeiero
   ;;
   2 )
-  VIDA_PERSONAGEM="45"
-  ATAQUE_PERSONAGEM="10"
-  DEFESA_PERSONAGEM="6"
-  VELOCIDADE_PERSONAGEM="8"
+  fuzileiro
   ;;
   3 )
-  VIDA_PERSONAGEM="50"
-  ATAQUE_PERSONAGEM="6"
-  DEFESA_PERSONAGEM="8"
-  VELOCIDADE_PERSONAGEM="10"
+  cientista
   ;;
   esac
 }
@@ -262,14 +253,11 @@ function progresso_no_jogo() { # Esta função faz o sorteio do que vai acontece
 
 function sorteio_de_alien() {
   $(shuf -n 1 lista-monstros)
-  clear
-  VIDA_MONSTRO=$(($VIDA_MONSTRO * 0,3))
-  echo -e "$NOME_MONSTRO\n$VIDA_MONSTRO\n$ATAQUE_MONSTRO\n$DEFESA_MONSTRO\n$VELOCIDADE_MONSTRO"
-  sleep 3
 }
 
 function batalha() {
   sorteio_de_alien
+
 }
 
 tela_do_jogador
