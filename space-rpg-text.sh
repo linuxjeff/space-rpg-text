@@ -11,6 +11,10 @@ VIDA_PERSONAGEM=""        # Guarda a vida do personagem.
 ATAQUE_PERSONAGEM=""      # Guarda o ataque do personagem.
 DEFESA_PERSONAGEM=""      # Guarda a defesa do personagem.
 VELOCIDADE_PERSONAGEM=""  # Guarda a velocidade do personagem.
+VIDA_MONSTRO=""           # Guarda a vida do monstro.
+ATAQUE_MONSTRO=""         # Guarda o ataque do monstro.
+DEFESA_MONSTRO=""         # Guarda a defesa do monstro.
+VELOCIDADE_MONSTRO=""     # Guarda a velocidade do monstro.
 
 function opcao_invalida() { # Frase de opção invalida.
   clear
