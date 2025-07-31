@@ -2,7 +2,8 @@
 # v0.0.1
 # Este é um jogo de RPG em texto.
 
-source classes-personagens.lib monstros.lib
+source classes-personagens.lib
+source monstros.lib
 
 NOME_DO_PERSONAGEM=""     # Guarda o nome do personagem no nivel Global
 CLASSE_DO_PERSONAGEM=""   # Guarda a classe do personagem em nivel global.
@@ -246,9 +247,7 @@ function progresso_no_jogo() { # Esta função faz o sorteio do que vai acontece
       ;;
     2 )
     let SOMA_DE_QUILOMETROS=SOMA_DE_QUILOMETROS+1
-    clear
-    echo "$NUMERO_PROGRESSO"
-    sleep 3
+    batalha
       ;;
     3 )
     let SOMA_DE_QUILOMETROS=SOMA_DE_QUILOMETROS+1
@@ -262,12 +261,15 @@ function progresso_no_jogo() { # Esta função faz o sorteio do que vai acontece
 
 
 function sorteio_de_alien() {
-  AL_CANOVA
+  $(shuf -n 1 lista-monstros)
+  clear
+  VIDA_MONSTRO=$(($VIDA_MONSTRO * 0,3))
+  echo -e "$NOME_MONSTRO\n$VIDA_MONSTRO\n$ATAQUE_MONSTRO\n$DEFESA_MONSTRO\n$VELOCIDADE_MONSTRO"
+  sleep 3
 }
-
 
 function batalha() {
   sorteio_de_alien
 }
 
-tela_inicial
+tela_do_jogador
