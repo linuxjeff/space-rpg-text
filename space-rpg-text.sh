@@ -10,6 +10,10 @@ CLASSE_DO_PERSONAGEM=""   # Guarda a classe do personagem em nivel global.
 NUMERO_TOTAL_DE_XP=""     # Guarda o total de experiencia do personagem.
 SOMA_DE_QUILOMETROS=""    # Guarda os quilômetros percorridos.
 NUMERO_DO_EVENTO=""       # Guarda o número do evento.
+OPCAO_BATALHA=""
+VIDA_NA_BATALHA=""
+CHAVE_MOSTRO="0"
+CHAVE_PERSONAGEM="0"
 NOME_PERSONAGEM=""        # Guarda a nome do personagem.
 VIDA_PERSONAGEM=""        # Guarda a vida do personagem.
 ATAQUE_PERSONAGEM=""      # Guarda o ataque do personagem.
@@ -187,7 +191,7 @@ function tela_do_jogador () { # Tela onde o jogo se desenrola até o fim.
     progresso_no_jogo
       ;;
     2 )
-    batalha
+    menu
       ;;
     3 )
     sair_tela_jogador
@@ -255,9 +259,121 @@ function sorteio_de_alien() {
   $(shuf -n 1 lista-monstros)
 }
 
-function batalha() {
-  sorteio_de_alien
-
+function opcao_batalha() {
+  clear
+  echo "Alien: $NOME_MONSTRO | Vida: $VIDA_MONSTRO"
+  echo "Personagem: $NOME_DO_PERSONAGEM | Vida: $VIDA_NA_BATALHA"
+  echo "1 - Atacar | 2 - Item | 3 - Fugir"
+  read -p ">>> " OPCAO_BATALHA
+  case $OPCAO_BATALHA in
+    1 )
+    dado_sleep
+      ;;
+    2 )
+      ;;
+    3 )
+      ;;
+    * )
+    opcao_invalida
+    opcao_batalha
+      ;;
+  esac
 }
 
-tela_do_jogador
+function dado_ataque() {
+  DADO_ATAQUE=$((RANDOM % $ATAQUE_PERSONAGEM + 1))
+  DADO_DEFESA=$((RANDOM % $DEFESA_MONSTRO + 1))
+  DADO_MENOS=$(echo "$DADO_ATAQUE - $DADO_DEFESA" | bc)
+  if [[ "$DADO_MENOS" -lt 0 ]]; then
+    dado_ataque
+  else
+    VIDA_MONSTRO=$(echo "$VIDA_MONSTRO - $DADO_MENOS" | bc)
+  fi
+  clear
+  echo " Você retirou $DADO_MENOS de dano do $NOME_MONSTRO."
+  sleep 3
+  if [[ "$VIDA_MONSTRO" -le 0 ]]; then
+    clear
+    echo "O $NOME_MONSTRO morreu!"
+    sleep 3
+    tela_do_jogador
+  elif [[ "$CHAVE_MOSTRO" == 1 ]]; then
+    dado_ataque_monstro
+  else
+    opcao_batalha
+  fi
+}
+
+function dado_ataque_monstro() {
+  DADO_ATAQUE=$((RANDOM % $ATAQUE_MONSTRO + 1))
+  DADO_DEFESA=$((RANDOM % $DEFESA_PERSONAGEM + 1))
+  DADO_MENOS=$(echo "$DADO_ATAQUE - $DADO_DEFESA" | bc)
+  if [[ "$DADO_MENOS" -lt 0 ]]; then
+    dado_ataque_monstro
+  else
+    VIDA_NA_BATALHA=$(echo "$VIDA_NA_BATALHA - $DADO_MENOS" | bc)
+  fi
+  clear
+  echo " Você tou $DADO_MENOS de dano."
+  sleep 3
+  if [[ "$VIDA_NA_BATALHA" -le 0 ]]; then
+    clear
+    echo -e "O $NOME_DO_PERSONAGEM morreu!\nFim do jogo!"
+    sleep 3
+    NOME_DO_PERSONAGEM=""     # Guarda o nome do personagem no nivel Global
+    CLASSE_DO_PERSONAGEM=""   # Guarda a classe do personagem em nivel global.
+    NUMERO_TOTAL_DE_XP=""     # Guarda o total de experiencia do personagem.
+    SOMA_DE_QUILOMETROS=""    # Guarda os quilômetros percorridos.
+    NUMERO_DO_EVENTO=""       # Guarda o número do evento.
+    OPCAO_BATALHA=""
+    VIDA_NA_BATALHA=""
+    CHAVE_MOSTRO="0"
+    CHAVE_PERSONAGEM="0"
+    NOME_PERSONAGEM=""        # Guarda a nome do personagem.
+    VIDA_PERSONAGEM=""        # Guarda a vida do personagem.
+    ATAQUE_PERSONAGEM=""      # Guarda o ataque do personagem.
+    DEFESA_PERSONAGEM=""      # Guarda a defesa do personagem.
+    VELOCIDADE_PERSONAGEM=""  # Guarda a velocidade do personagem.
+    NOME_MONSTRO=""           # Guarda a nome do monstro.
+    VIDA_MONSTRO=""           # Guarda a vida do monstro.
+    ATAQUE_MONSTRO=""         # Guarda o ataque do monstro.
+    DEFESA_MONSTRO=""         # Guarda a defesa do monstro.
+    VELOCIDADE_MONSTRO=""     # Guarda a velocidade do monstro.
+    tela_inicial
+  elif [[ "$CHAVE_PERSONAGEM" == 1 ]]; then
+    dado_ataque
+  else
+    opcao_batalha
+  fi
+}
+
+function dado_sleep() {
+  DADO_S_PERSONAGEM=$((RANDOM % $VELOCIDADE_PERSONAGEM + 1))
+  DADO_S_MONSTER=$((RANDOM % $VELOCIDADE_MONSTRO + 1))
+
+  if [[ "$DADO_S_PERSONAGEM" -gt "$DADO_S_MONSTER" ]]; then
+    clear
+    echo "meu dado de velocidade: $DADO_S_PERSONAGEM dado do monstro: $DADO_S_MONSTER"
+    sleep 5
+    CHAVE_MOSTRO=1
+    CHAVE_PERSONAGEM=0
+    dado_ataque
+  elif [[ DADO_S_MONSTER -gt DADO_S_PERSONAGEM ]]; then
+    clear
+    echo "dado do monstro: $DADO_S_MONSTER meu dado de velocidade: $DADO_S_PERSONAGEM "
+    sleep 5
+    CHAVE_PERSONAGEM=1
+    CHAVE_MOSTRO=0
+    dado_ataque_monstro
+  else
+    dado_sleep
+  fi
+}
+
+function batalha() {
+  VIDA_NA_BATALHA=$VIDA_PERSONAGEM
+  sorteio_de_alien
+  opcao_batalha
+}
+
+tela_inicial
