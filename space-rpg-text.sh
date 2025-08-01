@@ -260,6 +260,8 @@ function sorteio_de_alien() {
 }
 
 function opcao_batalha() {
+  CHAVE_MOSTRO="0"
+  CHAVE_PERSONAGEM="0"
   clear
   echo "Alien: $NOME_MONSTRO | Vida: $VIDA_MONSTRO"
   echo "Personagem: $NOME_DO_PERSONAGEM | Vida: $VIDA_NA_BATALHA"
