@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # v0.0.1
+# Vou começar a migrar para o dialog.
 # Este é um jogo de RPG em texto.
 
 source classes-personagens.lib
