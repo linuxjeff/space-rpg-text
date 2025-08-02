@@ -27,33 +27,26 @@ DEFESA_MONSTRO=""         # Guarda a defesa do monstro.
 VELOCIDADE_MONSTRO=""     # Guarda a velocidade do monstro.
 
 function opcao_invalida() { # Frase de opção invalida.
-  clear
-  echo "Opção invalida."
+  dialog --title "Opção" --infobox "Opção invalida!" 0 0
   sleep 3
+  clear
 }
 
 function tela_inicial() { # Função da tela inicial.
-  OPCAO_TELA_INICIAL="" # Variável para tela inicial.
+  dialog --title "SPACE RPG TEXT" --ok-button "Continuar" \
+    --cancel-button "Sair"\
+    --menu "Menu" 0 0 2 \
+    1 "Iniciar" 2> /tmp/tela_inicial
 
+  OPCAO_TELA_INICIAL=$(cat /tmp/tela_inicial) # Variável para tela inicial.
   clear
 
-  echo -e "SPACE RPG\n       TEXT"
-  echo -e "1 - Iniciar\n2 - Sair"
-  echo -n ">>> " ; read OPCAO_TELA_INICIAL
-
-  OPCAO_TELA_INICIAL="${OPCAO_TELA_INICIAL^^}" # Troca letras minusculas por
-                                               # letras maiúsculas.
-
   case $OPCAO_TELA_INICIAL in # Case que verifica a opção escolhida.
-    1 | "I" | "INICIAR" )
+    1 )
     tela_personagens
       ;;
-    2 | "S" | "SAIR" )
+    2 )
     exit 0
-      ;;
-    * )
-    opcao_invalida
-    tela_inicial
       ;;
   esac
 }
