@@ -33,12 +33,12 @@ function opcao_invalida() { # Frase de opção invalida.
 }
 
 function tela_inicial() { # Função da tela inicial.
-  dialog --title "SPACE RPG TEXT" --ok-button "Continuar" \
+  OPCAO_TELA_INICIAL=$(dialog --stdout --title "SPACE RPG TEXT" \
+    --ok-button "Continuar" \
     --cancel-button "Sair"\
     --menu "Menu" 0 0 2 \
-    1 "Iniciar" 2> /tmp/tela_inicial
+    1 "Iniciar")
 
-  OPCAO_TELA_INICIAL=$(cat /tmp/tela_inicial) # Variável para tela inicial.
   clear
 
   case $OPCAO_TELA_INICIAL in # Case que verifica a opção escolhida.
